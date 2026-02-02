@@ -30,7 +30,8 @@ case "${cmd}" in
       echo "npx is required to start Ganache (Node.js install)."
       exit 1
     fi
-    exec npx --yes ganache --server.port 8545 --chain.chainId 1337 --wallet.totalAccounts 10 --wallet.defaultBalance 1000
+    GANACHE_MNEMONIC="${GANACHE_MNEMONIC:-test test test test test test test test test test test junk}"
+    exec npx --yes ganache --server.port 8545 --chain.chainId 1337 --wallet.totalAccounts 10 --wallet.defaultBalance 1000 --wallet.mnemonic "${GANACHE_MNEMONIC}"
     ;;
   compile)
     require_venv
