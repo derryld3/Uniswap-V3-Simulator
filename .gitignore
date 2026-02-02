@@ -25,5 +25,5 @@ tsp_venv/
 ilp_venv/
 tgpt_venv/
 unisim_venv/
-
-
+.home
+.idea
